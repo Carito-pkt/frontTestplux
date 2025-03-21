@@ -1,0 +1,6 @@
+html, body {
+    overflow: hidden;
+    background: rgb(227, 221, 221);
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+}
