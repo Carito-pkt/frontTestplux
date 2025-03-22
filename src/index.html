@@ -6,12 +6,52 @@
   <title>TechnicalTest</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
     rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    var data = {
+      PayboxRemail: "dmorales@pagoplux.com",
+      PayboxSendmail: "dmorales@pagoplux.com",
+      PayboxRename: "Pago plux",
+      PayboxSendname: "cardholdername",
+      PayboxBase0: "2.0",
+      PayboxBase12: "10.0",
+      PayboxDescription: "Descripcion del pago",
+      PayboxLanguage: "es",
+      PayboxDirection: "Direccion tarjetahabiente",
+      PayBoxClientPhone: "0984969312z",
+      PayboxProduction: false,
+      PayboxRecurrent: true,
+      PayboxIdPlan: "171",
+      PayboxPermitirCalendarizar: true,
+      PayboxPagoInmediato: true,
+      PayboxCobroPrueba: false,
+      PayBoxClientIdentification: "1003088679",
+      PayboxEnvironment: "sandbox",
+      PayboxAmountVariablePlan: true,
+      PayboxFrequencyPlan: "MEN",
+      PayboxTieneIvaPlan: true,
+      PayboxDescriptionPlan: "Descripcion plan",
+      PayboxPagoPlux: false,
+      PayboxIdElement: "idHtml"
+    };
+  </script>
+  <script text="text/javascript">
+    var onAuthorize = function(response){
+      if(response.status=="succeeded"){
+        console.log(response);
+      }else{
+        console.log(response);
+      }
+    }
+  </script>
+  <script src="https://sandbox-paybox.pagoplux.com/paybox/index.js"></script>
 </head>
 
 <body>

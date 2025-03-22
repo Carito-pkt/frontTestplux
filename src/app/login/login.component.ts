@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -10,16 +12,23 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService,
+    private router:Router
+  ) {}
 
   Login() {
     this.authService.login(this.email, this.password).subscribe(
       (response) => {
-        alert('✅ Usuario ingresó con éxito');
+        this.router.navigate(['/home']);
       },
       (error) => {
         console.log(error);
-        alert('❌ Credenciales incorrectas');
+        Swal.fire({
+          title: 'Error',
+          text: 'Credenciales incorrectas',
+          icon: 'error',
+          confirmButtonText: 'Intentar de nuevo'
+        });
       }
     );
   }
